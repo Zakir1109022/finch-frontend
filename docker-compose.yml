@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  finch-frontend-app:
+    image: finch-frontend
+    container_name: finch-frontend-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8080:80"
