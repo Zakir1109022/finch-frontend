@@ -7,4 +7,7 @@ module.exports = {
   testEnvironmentOptions: {
     customExportConditions: ["node", "node-addons"],
   },
+  collectCoverage: true,
+  coverageDirectory: '<rootDir>/tests/__coverage__', 
+  coveragePathIgnorePatterns: ['/node_modules/']
 };
