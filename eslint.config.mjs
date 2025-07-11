@@ -22,6 +22,7 @@ export default defineConfig([
       'vue/no-unused-components': 'warn',
       //'quotes': ['warn', 'single'],
       'semi': ['warn', 'always'],
+      'no-undef': 'warn'
     } 
     },
   pluginVue.configs["flat/essential"],
@@ -29,7 +30,13 @@ export default defineConfig([
     files: ['**/*.vue'],
     rules: {
       'vue/no-unused-components': 'warn',
-       'no-undef': 'warn'
+       'no-undef': 'warn',
+       'no-dupe-keys': 'warn',
+       'no-self-assign': 'warn',
+       'vue/require-v-for-key' : 'warn',
+       'vue/no-dupe-keys' : 'warn',
+       'vue/valid-template-root' : 'warn',
+       'vue/multi-word-component-names': 'warn'
     },
   }
 ]);
