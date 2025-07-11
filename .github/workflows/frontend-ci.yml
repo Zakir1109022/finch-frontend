@@ -18,7 +18,7 @@ jobs:
       - run: |
           npm ci --f
           npm run build
-          npm run test:unit
+          npm run test
           npm run lint
 
   deploy: # Corrected indentation for the job name
