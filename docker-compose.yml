@@ -2,8 +2,11 @@ version: '3.8'
 
 services:
   finch-frontend-app:
-    image: zakir22/finch-frontend
+    image: finch-frontend
     container_name: finch-frontend-container
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     env_file:
       - .env
