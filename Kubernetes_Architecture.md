@@ -101,6 +101,20 @@ spec:
     - port: 8080
       targetPort: 80
 ```
+## 4. **Resource Allocation**
+
+### Deployment Resources
+The Vue application deployment defines specific **CPU and memory resources** for efficient usage and to avoid overcommitment of cluster resources.
+
+- **Requests**:
+  - CPU: `500m` (0.5 vCPU)
+  - Memory: `512Mi`
+  - These values define the minimum resources guaranteed to the container.
+  
+- **Limits**:
+  - CPU: `1` (1 vCPU)
+  - Memory: `1Gi`
+  - These are the maximum resources the container can consume.
 
 * **Port 8080** is exposed for internal access (e.g., by Ingress or backend services)
 * Traffic is forwarded to **container port 80**
