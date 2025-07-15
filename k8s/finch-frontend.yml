@@ -4,13 +4,14 @@ metadata:
   name: vue
 
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vue-app
   namespace: vue
   labels:
-        app: vue-app
+    app: vue-app
 spec:
   replicas: 2
   selector:
@@ -22,11 +23,20 @@ spec:
         app: vue-app
     spec:
       containers:
-      - name: vue-app-container
-        image: zakir22/finch-frontend:latest
-        ports:
-        - containerPort: 80
+        - name: vue-app-container
+          image: zakir22/finch-frontend:latest
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          ports:
+            - containerPort: 80
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
